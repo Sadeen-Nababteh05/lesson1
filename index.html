@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نموذج خطة درس</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            direction: rtl;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f7f7f7;
+        }
+        .form-container {
+            width: 500px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-container h2 {
+            text-align: center;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        select, input[type="text"], input[type="date"], textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            border: none;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>نموذج خطة درس</h2>
+    <form id="lesson-plan-form">
+        <!-- خانة اسم الدرس -->
+        <div class="form-group">
+            <label for="lesson-name">اسم الدرس:</label>
+            <input type="text" id="lesson-name" name="lesson-name" required>
+        </div>
+
+        <!-- خانة الصف الدراسي -->
+        <div class="form-group">
+            <label for="grade">الصف الدراسي:</label>
+            <select id="grade" name="grade" required>
+                <option value="">اختر الصف الدراسي</option>
+                <option value="روضة">روضة</option>
+                <option value="الأول">الأول</option>
+                <option value="الثاني">الثاني</option>
+                <option value="الثالث">الثالث</option>
+                <option value="الرابع">الرابع</option>
+                <option value="الخامس">الخامس</option>
+                <option value="السادس">السادس</option>
+                <option value="السابع">السابع</option>
+                <option value="الثامن">الثامن</option>
+                <option value="التاسع">التاسع</option>
+                <option value="العاشر">العاشر</option>
+            </select>
+        </div>
+
+        <!-- خانة عنوان الدرس -->
+        <div class="form-group">
+            <label for="lesson-title">عنوان الدرس:</label>
+            <input type="text" id="lesson-title" name="lesson-title" required>
+        </div>
+
+        <!-- خانة تاريخ الدرس -->
+        <div class="form-group">
+            <label for="lesson-date">تاريخ الدرس:</label>
+            <input type="date" id="lesson-date" name="lesson-date" required>
+        </div>
+
+        <!-- الأهداف التعليمية -->
+        <div class="form-group">
+            <label for="lesson-goals">الأهداف التعليمية:</label>
+            <textarea id="lesson-goals" name="lesson-goals" placeholder="أدخل الأهداف هنا..." required></textarea>
+        </div>
+
+        <!-- المحتوى التعليمي -->
+        <div class="form-group">
+            <label for="lesson-content">المحتوى التعليمي:</label>
+            <textarea id="lesson-content" name="lesson-content" placeholder="أدخل المحتوى هنا..." required></textarea>
+        </div>
+
+        <!-- الأنشطة التعليمية -->
+        <div class="form-group">
+            <label for="lesson-activities">الأنشطة التعليمية:</label>
+            <textarea id="lesson-activities" name="lesson-activities" placeholder="أدخل الأنشطة هنا..." required></textarea>
+        </div>
+
+        <!-- الوسائل التعليمية -->
+        <div class="form-group">
+            <label for="lesson-tools">الوسائل التعليمية:</label>
+            <textarea id="lesson-tools" name="lesson-tools" placeholder="أدخل الوسائل هنا..." required></textarea>
+        </div>
+
+        <!-- الواجبات أو النشاط الختامي -->
+        <div class="form-group">
+            <label for="final-activity">الواجبات أو النشاط الختامي:</label>
+            <textarea id="final-activity" name="final-activity" placeholder="أدخل الواجبات أو النشاط هنا..." required></textarea>
+        </div>
+
+        <!-- مدة الحصة -->
+        <div class="form-group">
+            <label for="lesson-duration">مدة الحصة (دقائق):</label>
+            <input type="text" id="lesson-duration" name="lesson-duration" required>
+        </div>
+
+        <!-- الملاحظات -->
+        <div class="form-group">
+            <label for="lesson-notes">الملاحظات:</label>
+            <textarea id="lesson-notes" name="lesson-notes" placeholder="أدخل الملاحظات هنا..." required></textarea>
+        </div>
+
+        <!-- زر الإرسال -->
+        <button type="submit" class="submit-btn">حفظ الخطة</button>
+    </form>
+</div>
+
+<script>
+    document.getElementById('lesson-plan-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        alert('تم حفظ خطة الدرس بنجاح!');
+        // هنا يمكن إضافة الكود لإرسال البيانات إلى الخادم
+        this.reset(); // لإعادة تعيين النموذج بعد الحفظ
+    });
+</script>
+
+</body>
+</html>
